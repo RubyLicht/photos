@@ -10,10 +10,6 @@ import 'features/photos/presentation/pages/photo_list_page.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Increase image cache size to prevent showing loaders for cached images
-  PaintingBinding.instance.imageCache.maximumSize = 200;
-  PaintingBinding.instance.imageCache.maximumSizeBytes = 100 << 20; // 100 MB
-
   // Dependency injection setup
   final httpClient = http.Client();
   final photoRemoteDataSource = PhotoRemoteDataSourceImpl(client: httpClient);
